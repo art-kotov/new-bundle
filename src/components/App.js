@@ -1,14 +1,13 @@
 // Core
 import React from "react";
 import styled from "styled-components";
-//Instruments
+// Instruments
 import Image from "../assets/images/horse.png";
 
-const App = () => (
+const App = props => (
   <Wrapper>
     <img src={ Image } alt="rock horse" />
-    <Title>Let`s rock!!!</Title>
-    <p>12313</p>
+    <Title>Let`s rock!!! {props.name}</Title>
   </Wrapper>
 );
 
@@ -24,3 +23,7 @@ const Title = styled.h1`
 `;
 
 export default App;
+
+App.propTypes = {
+  name: PropTypes.string
+};
