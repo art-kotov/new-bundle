@@ -1,4 +1,5 @@
 // Core
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 // Instruments
@@ -8,6 +9,7 @@ const App = props => (
   <Wrapper>
     <img src={Image} alt="rock horse" />
     <Title>Let`s rock!!! {props.name}</Title>
+    <Title>Let`s rock!!! {props.age}</Title>
   </Wrapper>
 );
 
@@ -23,3 +25,8 @@ const Title = styled.h1`
 `;
 
 export default App;
+
+App.propTypes = {
+  age: PropTypes.string.isRequired,
+  name: PropTypes.string
+};
