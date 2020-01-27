@@ -6,7 +6,7 @@ import Image from "../assets/images/horse.png";
 
 const App = () => (
   <Wrapper>
-    <img src={Image} alt="rock horse" />
+    <img src={ Image } alt="rock horse" />
     <Title>Let`s rock!!!</Title>
   </Wrapper>
 );
