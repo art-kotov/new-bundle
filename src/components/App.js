@@ -8,6 +8,7 @@ const App = () => (
   <Wrapper>
     <img src={ Image } alt="rock horse" />
     <Title>Let`s rock!!!</Title>
+    <p>12313</p>
   </Wrapper>
 );
 
