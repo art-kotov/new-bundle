@@ -10,6 +10,7 @@ const App = props => (
     <img src={Image} alt="rock horse" />
     <Title>Let`s rock!!! {props.name}</Title>
     <Title>Let`s rock!!! {props.age}</Title>
+    <Title>Let`s rock!!! {props.aaa}</Title>
   </Wrapper>
 );
 
@@ -25,8 +26,3 @@ const Title = styled.h1`
 `;
 
 export default App;
-
-App.propTypes = {
-  age: PropTypes.string.isRequired,
-  name: PropTypes.string
-};
