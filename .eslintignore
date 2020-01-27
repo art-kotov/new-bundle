@@ -1,0 +1,4 @@
+# Valid
+build/*
+static/*
+node_modules/*

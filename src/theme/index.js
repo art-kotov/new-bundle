@@ -2,4 +2,4 @@ const theme = {
   main: "mediumseagreen"
 };
 
-export default theme
+export default theme;

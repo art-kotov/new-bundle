@@ -1,0 +1,25 @@
+{
+//    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["react-hooks"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "rules": {
+        "strict": 0,
+        "no-undef": "off",
+        "no-unused-vars": "warn",
+        "no-await-in-loop": "error",
+        "camelcase": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    }
+}

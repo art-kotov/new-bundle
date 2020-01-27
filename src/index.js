@@ -10,6 +10,7 @@ import App from "./components/App";
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-  <App />
+    <App />
   </ThemeProvider>,
-  document.getElementById("app"));
+  document.getElementById("app")
+);
