@@ -5,20 +5,20 @@ import styled from "styled-components";
 // Instruments
 import Image from "../assets/images/horse.png";
 
-const App = props => (
+const App = ({ aaa, age, name }) => (
     <Wrapper>
         <img src={Image} alt="rock horse" />
         <Title>
             Let`s rock!!!
-            {props.name}
+            {name}
         </Title>
         <Title>
             Let`s rock!!!
-            {props.age}
+            {age}
         </Title>
         <Title>
             Let`s rock!!!
-            {props.aaa}
+            {aaa}
         </Title>
     </Wrapper>
 );
