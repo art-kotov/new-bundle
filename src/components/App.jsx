@@ -1,29 +1,23 @@
 // Core
 import PropTypes from "prop-types";
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // Instruments
 import { observer } from "mobx-react-lite";
 import { useStore } from "context";
+// Components
+import PrivateRoute from "../routes/PrivateRoute";
+import PublicRoute from "../routes/PublicRoute";
 
-const App = ({ aaa = "2", age, name }) => {
-  const store = useStore();
-
-  useEffect(() => {
-    store.getData();
-  }, [store.posts]);
-
+const App = () => {
+  const [isLogin, changeLogin] = useState(false);
   return (
-    <Wrapper>
-      <h1>{store.name}</h1>
-      <input
-        type="text"
-        value={store.name}
-        onChange={e => {
-          store.setName(e.target.value);
-        }}
-      />
-    </Wrapper>
+    <div>
+      <button type="button" onClick={() => changeLogin(!isLogin)}>
+        {isLogin ? "logout" : "login"}
+      </button>
+      {isLogin ? <PrivateRoute /> : <PublicRoute />}
+    </div>
   );
 };
 

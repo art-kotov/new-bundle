@@ -1,17 +1,21 @@
 // Core
 import Reactotron from "reactotron-react-js";
-import { useContext, createContext } from "react";
 import { types, flow } from "mobx-state-tree";
+import { api } from "../services/api";
 
-const { model, array } = types;
+const { model, array, string, optional } = types;
 
-const Todo = types.model({
+const Todo = types.model("Todo", {
   title: types.string
 });
+const Users = model("Users", {
+  users: array(string)
+})
 
 const rootStore = model("RootStore", {
   name: "Art",
   done: false,
+  users: Users,
   posts: array(
     model({
       userId: 0,
@@ -22,18 +26,23 @@ const rootStore = model("RootStore", {
   ),
   todos: array(Todo)
 }).actions(self => ({
-  getData: flow(function*() {
-    const response = yield fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = yield response.json();
-    console.log(data);
-    self.posts = data;
+  getData: flow(function* getData() {
+    try {
+      const response = yield api.posts.getPosts();
+
+      self.posts = response.data;
+    } catch (e) {
+      console.log(e);
+    }
   }),
   setName(val) {
     self.name = val;
   }
 }));
 
-const store = rootStore.create();
+const store = rootStore.create({
+  users: {}
+});
 
 export default store;
 

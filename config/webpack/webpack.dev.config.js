@@ -1,6 +1,7 @@
 // Core
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 // Instruments
 const { build, source } = require("./paths");
 
@@ -35,6 +36,7 @@ module.exports = {
             inject: false,
             template: require("html-webpack-template"),
             appMountId: "app"
-        })
+        }),
+        new Dotenv()
     ]
 };
