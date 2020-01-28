@@ -1,26 +1,18 @@
 // Core
-import PropTypes from 'prop-types'
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 // Instruments
 import Image from "../assets/images/horse.png";
+import Hello from "./Hello";
 
-const App = ({ aaa, age, name }) => (
+const App = ({ aaa = "2", age, name }) => (
     <Wrapper>
         <img src={Image} alt="rock horse" />
-        <Title>
-            Let`s rock!!!
-            {name}
-        </Title>
-        <Title>
-            Let`s rock!!!
-            {age}
-        </Title>
-        <Title>
-            Let`s rock!!!
-            {aaa}
-        </Title>
+        <Title>Let`s rock!!! {name}</Title>
+        <Title>Let`s rock!!! {age}</Title>
+        <Title>Let`s rock!!!{aaa}</Title>
+        <Hello />
     </Wrapper>
 );
 
@@ -35,10 +27,10 @@ const Title = styled.h1`
     color: palevioletred;
 `;
 
-export default App;
-
 App.propTypes = {
-  aaa: PropTypes.string,
-  age: PropTypes.string,
-  name: PropTypes.string
-}
+    aaa: PropTypes.string,
+    age: PropTypes.number,
+    name: PropTypes.string
+};
+
+export default App;

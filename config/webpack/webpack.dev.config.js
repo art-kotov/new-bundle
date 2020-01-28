@@ -14,7 +14,7 @@ module.exports = {
   devtool: "inline-source-map",
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ["file-loader"]

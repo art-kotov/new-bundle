@@ -1,4 +1,5 @@
 # Valid
+config/*
 build/*
 static/*
 node_modules/*

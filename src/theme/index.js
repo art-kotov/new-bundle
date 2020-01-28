@@ -1,5 +1,5 @@
 const theme = {
-  main: "mediumseagreen"
+    main: "mediumseagreen"
 };
 
 export default theme;
