@@ -3,7 +3,7 @@ import Reactotron from "reactotron-react-js";
 import { types, flow } from "mobx-state-tree";
 import { api } from "../services/api";
 
-const { model, array, string, optional } = types;
+const { model, array, string } = types;
 
 const Todo = types.model("Todo", {
   title: types.string

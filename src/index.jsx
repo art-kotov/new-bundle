@@ -8,8 +8,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import store from "stores/root-store";
 import { StoreContext } from "context";
 // Instruments
+// import App from "components/App";
+import theme from "theme";
 import App from "components/App";
-import theme from "./theme";
 // Components
 
 ReactDOM.render(

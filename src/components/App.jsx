@@ -1,22 +1,23 @@
 // Core
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, {  useState, lazy, Suspense } from "react";
 import styled from "styled-components";
 // Instruments
 import { observer } from "mobx-react-lite";
-import { useStore } from "context";
 // Components
-import PrivateRoute from "../routes/PrivateRoute";
-import PublicRoute from "../routes/PublicRoute";
+const PrivateRoute = lazy(() => import("routes/PrivateRoute"));
+const PublicRoute = lazy(() => import("routes/PublicRoute"));
 
 const App = () => {
   const [isLogin, changeLogin] = useState(false);
   return (
     <div>
       <button type="button" onClick={() => changeLogin(!isLogin)}>
-        {isLogin ? "logout" : "login"}
+        {isLogin ? "1logout" : "login"}
       </button>
+      <Suspense fallback={<div>Loading...</div>}>
       {isLogin ? <PrivateRoute /> : <PublicRoute />}
+      </Suspense>
     </div>
   );
 };
