@@ -1,4 +1,5 @@
 // Core
+import PropTypes from 'prop-types'
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -35,3 +36,9 @@ const Title = styled.h1`
 `;
 
 export default App;
+
+App.propTypes = {
+  aaa: PropTypes.string,
+  age: PropTypes.string,
+  name: PropTypes.string
+}
